@@ -5,6 +5,8 @@ import InfoBox from './InfoBox'
 import Map from './Map'
 import Table from './Table'
 import { sortData } from './util'
+import LineGraph from './LineGraph'
+import "leaflet/dist/leaflet.css";
 import './App.css';
 
 function App() {
@@ -13,6 +15,10 @@ function App() {
   const [country, setInputCountry] = useState('worldwide')
   const [countryInfo, setCountryInfo] = useState({})
   const [tableData, setTableData] = useState([])
+  const [casesType, setCasesType] = useState("cases");
+  const [mapCenter, setMapCenter] = useState([34.80746, -40.4796]);
+  const [mapZoom, setMapZoom] = useState(3);
+  const [mapCountries, setMapCountries] = useState([]);
 
 
   useEffect(() => {
@@ -30,6 +36,7 @@ function App() {
             value: country.countryInfo.iso2,
           }));
           const sortedData = sortData(data)
+          setMapCountries(data);
           setTableData(sortedData)
           setCountries(countries);
         })
@@ -45,6 +52,9 @@ function App() {
       .then(data => {
         setInputCountry(countryCode)
         setCountryInfo(data)
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+        setMapZoom(4);
+
       })
 
   }
@@ -69,7 +79,7 @@ function App() {
         <div className='app__stats'>
 
           {/* infoBox1*/}
-          <InfoBox title='Coronavirus Cases' cases={countryInfo.todayCases} total={countryInfo.cases} />
+          <InfoBox onClick={(e) => setCasesType("cases")} title='Coronavirus Cases' cases={countryInfo.todayCases} total={countryInfo.cases} />
 
           {/* infoBox2*/}
           <InfoBox title='Recovered' cases={countryInfo.todayRecovered} total={countryInfo.recovered} />
@@ -78,7 +88,12 @@ function App() {
 
         </div>
         {/*Map will be here */}
-        <Map />
+        <Map
+          countries={mapCountries}
+          casesType={casesType}
+          center={mapCenter}
+          zoom={mapZoom}
+        />
 
       </div>
       <Card className='app__right'>
@@ -88,6 +103,8 @@ function App() {
           <Table countries={tableData} />
           {/*graph */}
           <h3>Worldwide new Cases graph</h3>
+          <LineGraph />
+
         </CardContent>
       </Card>
 
