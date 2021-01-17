@@ -1,11 +1,15 @@
 
 ### covid 19 visualizer
-## This Project is a beginner friendly project I built using React. Some key Aspects:
+### Project features
 
 - Shows Live Cases, Recoveries, Deaths 
 - Shows Worldwide cases and Country Based cases
 - Line Chart for worldwide cases
 - Clickable Markers on Map show Country information
+
+### screenshot of project
+![covid1](https://user-images.githubusercontent.com/49319399/104853915-0cde1b80-5915-11eb-883a-e2d6697f863a.PNG)
+
 
 ### `npm start`
 
