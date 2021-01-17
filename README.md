@@ -1,5 +1,5 @@
 
-### covid 19 visualizer
+### covid-19 visualizer
 ### Project features
 
 - Shows Live Cases, Recoveries, Deaths 
