@@ -10,6 +10,9 @@
 ### screenshot of project
 ![covid1](https://user-images.githubusercontent.com/49319399/104853915-0cde1b80-5915-11eb-883a-e2d6697f863a.PNG)
 
+![visualize](https://user-images.githubusercontent.com/49319399/104856342-33a34e80-5923-11eb-82c5-483ae0e7f497.PNG)
+
+
 
 ### `npm start`
 
