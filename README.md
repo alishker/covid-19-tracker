@@ -7,6 +7,7 @@
 - Line Chart for worldwide cases
 - Clickable Markers on Map show Country information
 
+## explore live project at https://covid-19-tracker-259f1.web.app
 ### screenshot of project
 ![covid1](https://user-images.githubusercontent.com/49319399/104853915-0cde1b80-5915-11eb-883a-e2d6697f863a.PNG)
 
